@@ -12,6 +12,7 @@ import {
 import { Button } from '@/components/ui/button'
 import EditUser from '@/components/EditUser'
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
+import AppLineChart from '@/components/AppLineChart'
 
 const page = () => {
   return (
@@ -141,7 +142,10 @@ const page = () => {
               </p>
              </div>
             {/* CHART CONTAINER */}
-             <div className='bg-primary-foreground p-4 rounded-lg '> Chart</div>
+             <div className='bg-primary-foreground p-4 rounded-lg '> 
+              <h1 className='text-xl font-semibold'>User Activity</h1>
+              <AppLineChart/>
+              </div>
             </div>
         </div>
         </Breadcrumb>
