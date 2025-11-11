@@ -5,6 +5,13 @@ import { HoverCard, HoverCardContent, HoverCardTrigger } from '@/components/ui/h
 import { Progress } from '@/components/ui/progress'
 import { BadgeCheck, Candy, Citrus, Shield } from 'lucide-react'
 import React from 'react'
+import {
+  Sheet,
+  SheetTrigger,
+} from "@/components/ui/sheet"
+import { Button } from '@/components/ui/button'
+import EditUser from '@/components/EditUser'
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 
 const page = () => {
   return (
@@ -59,14 +66,24 @@ const page = () => {
                     <p>This user has been popular in the community</p>
                   </HoverCardContent>
                 </HoverCard> 
-
+                
                 
               </div>
 
             </div>
             {/* INFO CONTAINER */}
-            <div className='bg-primary-foreground p-4 rounded-lg '>
+            <div className="bg-primary-foreground p-4 rounded-lg">
+              <div className='flex items-center justify-between'>
                <h1 className='text-xl font-semibold '>User Information</h1>
+                <Sheet>
+                  <SheetTrigger asChild>
+                  <Button >Edit User </Button>
+                  </SheetTrigger>
+                  <EditUser/>
+                 
+                </Sheet>  
+
+              </div>
                <div className='space-y-4 mt-4'>
                  <div className='flex flex-col gap-2 mb-8'>
                   <p className='text-sm text-muted-foreground'>Profile completion</p>
@@ -96,16 +113,33 @@ const page = () => {
                <p className='text-sm text-muted-foreground mt-4'>Join on 2025.01.01</p>
                </div>
 
-            </div>
-            {/* CARD LIST CONTAINER */}
-            <div className='bg-primary-foreground p-4 rounded-lg '>
-              <CardList title="Recent Transactions"/>
-            </div>
+                {/* CARD LIST CONTAINER */}
+                 <div className='bg-primary-foreground p-4 rounded-lg '>
+                  <CardList title="Recent Transactions"/>
+                </div>
             
+
+            </div>
+           
             {/* RIGHT SIDE */}
             <div className='w-full xl:w-2/3 space-y-6'>
             {/* USER CARD CONTAINER */}
-             <div className='bg-primary-foreground p-4 rounded-lg '>User Card</div>
+             <div className='bg-primary-foreground p-4 rounded-lg space-y-2'>
+              <div className="flex items-center gap-2">
+                <Avatar className='size-12'>
+                  <AvatarImage src="https://avatars.githubusercontent.com/u/1486366"/>
+                  <AvatarFallback>JD</AvatarFallback>
+                </Avatar>
+
+                <h1 className='text-xl font-semi-bold'>Goku Bediako </h1>
+              </div>
+              <p className='text-sm text-muted-foreground'> 
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                Nostrum minima repellendus nihil, at aliquid excepturi 
+                adipisci perferendis nisi earum exercitationem ducimus 
+                nemo ipsum quae harum quod delectus sapiente dolorum impedit?
+              </p>
+             </div>
             {/* CHART CONTAINER */}
              <div className='bg-primary-foreground p-4 rounded-lg '> Chart</div>
             </div>
